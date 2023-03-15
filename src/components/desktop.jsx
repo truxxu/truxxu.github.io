@@ -104,7 +104,7 @@ function Desktop() {
   const [tunesOpened, toggleTunes] = useState(false);
 
   return (
-    <ThemeProvider theme="rose">
+    <ThemeProvider theme="win95">
       <GlobalStyle></GlobalStyle>
       {showAboutModal && (
         <S.layoutMain
