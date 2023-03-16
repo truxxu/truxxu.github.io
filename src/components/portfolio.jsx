@@ -76,6 +76,13 @@ function Portfolio({ closePortfolio, isMobile }) {
               >
                 Github
               </a>
+              <a
+                href="https://www.youtube.com/watch?v=pxHFuAfmmcE"
+                target={"_blank"}
+                rel="noreferrer"
+              >
+                Youtube
+              </a>
             </div>
             <hr />
             <h2>Mobile Crypto Wallet</h2>

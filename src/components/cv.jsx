@@ -27,88 +27,106 @@ function CV({ closeCV, isMobile }) {
           <div class="text-content">
             <h1>Curriculum Vitae</h1>
             <p>
-              UX/UI design, design systems, usability and user-centered design.
-              These are some of the keywords that describe my interests and
-              know-how. I have a long work history in communication and
-              user-centered design. With my futuristic and social mind, I shine
-              in duties where I get to use my social skills and design talents
-              in practice.
+              Mechanical engineer with a Master's degree in Energy Technology.
+              Always keen on learning new things. Passionate about science and
+              technology, experimenting and solving challenges. I want to keep
+              creating sophisticated and beautifully designed apps.
             </p>
-            <h2>Latest Work History</h2>
-            <h3>Designer/Developer - Helsingin Sanomat </h3>
+            <h2>Work Experience</h2>
+            <h3>Frontend Developer - Freelance</h3>
+            <h4>Jun. 2022 - presently</h4>
             <p>
-              Developing storytelling solutions, journalist tools and data
-              visualization at <a href="https://hs.fi">Helsingin Sanomat</a>.
-              Alongside Sokos development, participating in internal design
-              system development and internal design processes.
+              Designed and developed MVPs of websites and mobile apps for a
+              client with no prior experience with customer-facing applications.
             </p>
-            <h3>UX Designer - S-group / Sokos </h3>
             <p>
-              Developing a new <a href="https://sokos.fi">Sokos.fi</a> webstore
-              and driving user-centric design within the community. Alongside
-              Sokos development, participating in internal design system
-              development and internal design processes.
+              Integrated a payment gateway into a web app for a b2b fintech
+              product.
             </p>
-            <h3>UX/UI Designer - Solidabis Oy </h3>
+            <h3>Co-Founder - Tatacoa Bitcoin</h3>
+            <h4>Feb. 2021 - presently</h4>
             <p>
-              Design and UX consultant work focusing on the public sector
-              clients and design systems. One of the biggest achievements was a
-              Storybook-based styleguide which I coded, designed and made from
-              scratch as a one person team with minimal budget. Part-time
-              managing Solidabis marketing strategy, during which I single
-              handedly redesigned and redeveloped{" "}
-              <a href="https://solidabis.com">
-                Solidabis' Wordpress-based website
-              </a>{" "}
-              using the Genesis framework and coding a custom theme on PHP, CSS
-              and HTML.
+              Created a mobile application using React Native that facilitates
+              P2P Bitcoin commerce.
             </p>
-            <h3>Junior UX/UI Designer - IBM </h3>
+            <p>Produced a mobile Bitcoin Lightning Wallet.</p>
             <p>
-              UI development, front-end collaboration, visual and graphic
-              design. Client cooperation and usability assessments of
-              implemented products daily. One of the greatest accomplishments
-              was to get my team to use the{" "}
-              <a href="https://carbondesignsystem.com">Carbon design system</a>,
-              therefore increasing consistency and scaling with demos.
+              Built a dashboard application using Express and React that
+              provides store owners a detailed account of Bitcoin transaction
+              history.
             </p>
+            <h3>Software Engineer - EPAM</h3>
+            <h4>Jun 2021 - Dec 2021</h4>
+            <p>
+              Participated in the construction of a CRM platform for the
+              pharmaceutical sector. Built components from mockups and user
+              stories and provided input to UI/UX designers.
+            </p>
+            <h3>UI Engineer - Globant</h3>
+            <h4>Feb 2020 - Jun 2021</h4>
+            <p>
+              Ported an exisiting React Native app for video streaming owned by
+              Warner Media to support Roku TV. User interface and business logic
+              had to be adapted to offer a uniform experience across all
+              platforms and to account for technical limitations.
+            </p>
+            <p>
+              Created visual components from the ground up based on mockups to
+              complete a storybook, as part of the efforts to migrate the
+              website of National Geographic to Disney's in-house implementation
+              of the React library.
+            </p>
+            <h3>Frontend Developer - Handmadetech</h3>
+            <h4>May 2019 - Jun 2020</h4>
+            <p>
+              Responsible of building a front end for mobile devices for a
+              location-based marketing platform. This React Native RESTful app
+              make use of Redux for state management.
+            </p>
+            <p>
+              Led a small team on the development of a platform that offers
+              beauty services. This React.js responsive web app includes
+              features such as user accounts, bookings and card payments.
+            </p>
+            <p>
+              Ensured code follows good practices and meet quality standards
+              before being pushed to production
+            </p>
+            <h3>Co-Founder - Corporación HorMinka</h3>
+            <h4>Jan 2016 - Nov 2017</h4>
+            <p>
+              Started a non-profit organisation to promote science and
+              technology as tools for social development in the south of
+              Colombia.
+            </p>
+            <p>
+              Developed IoT devices for home automation on both hardware and
+              software side.
+            </p>
+            <p>
+              Collaborated in the creation of apps to encourage civic
+              engagement.
+            </p>
+            <p>
+              Participated as speaker in conferences for topics such as
+              Information Security and Free Software.
+            </p>
+            <hr />
             <h2>Education</h2>
-            <h3>Master of Arts in New Media - Aalto University</h3>
-            <p>
-              <a href="https://aaltodoc.aalto.fi/handle/123456789/40753">
-                My Master’s Thesis
-              </a>{" "}
-              in New Media Design & Production handled the issues faced by a
-              UI/UX designer on a daily basis with design systems with a
-              designed concept to improve the use of systems in daily tasks.
-              Usability School as minor, major New Media studies.
-            </p>
-            <h3>
-              Bachelor of Arts in Audiovisual Media - University of Lapland
-            </h3>
-            <p>
-              Bachelor studies in Audiovisual Media with a focus in user
-              inter-action and multimedia studies. Thesis work on proactive UX
-              design for a mobile interface. Exchange studies at Institut
-              d'Études Politiques de Paris in Latin American Studies.
-            </p>
-            <h3>International Baccalaureate - UWC Costa Rica</h3>
-            <p>
-              International Baccalaureate degree at the United World College
-              Costa Rica as the Finnish Cultural Fund fellow and Finnish
-              repre-sentative.
-            </p>
-            <h2>Languages in order of strength</h2>
+            <h3>Full-stack web development</h3>
+            <h4>Le Wagon Coding Bootcamp, Berlin, 2018</h4>
+            <h3>MSc in Energy Technology</h3>
+            <h4>
+              Lappeenranta University of Technology, Lappeenranta, 2012-2015
+            </h4>
+            <h3>BSc in Mechanical Engineering</h3>
+            <h4>Universidad de América, Bogota, 2005-2010</h4>
+            <hr />
+            <h2>Languages</h2>
             <ul>
-              <li>Finnish</li>
-              <li>English</li>
-              <li>Spanish</li>
-            </ul>
-            <p>Elementary knowledge in following</p>
-            <ul>
-              <li>French</li>
-              <li>Swedish</li>
-              <li>Portuguese</li>
+              <li>Spanish (native)</li>
+              <li>English (high proficiency)</li>
+              <li>German (basic)</li>
             </ul>
           </div>
         </S.textModal>
