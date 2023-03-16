@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&display=swap");
-
 .text-content {
   h1,
   h2,
@@ -7,20 +5,10 @@
   h4,
   h5,
   h6 {
-    // font-family: "Martel", sans-serif;
     font-weight: 800;
   }
 
-  p,
-  a,
-  b,
-  ul,
-  li {
-    // font-family: "Martel", sans-serif;
-  }
-
   span {
-    // font-family: "Martel", sans-serif;
     font-weight: 800;
     font-style: italic;
   }
@@ -30,6 +18,11 @@
   }
   b::after {
     margin-bottom: 1px;
+  }
+
+  .links-group {
+    display: flex;
+    gap: 5px;
   }
 }
 
@@ -61,5 +54,4 @@
   // background-image: url("/bgnd.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  // background-color: #ff8fa3;
 }
