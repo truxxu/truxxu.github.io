@@ -163,53 +163,30 @@ function Desktop() {
           <S.layoutMainContent bg="white" boxShadow="in">
             <S.textModal>
               <div class="text-content">
+                <h1>Technical Skills</h1>
                 <p>
-                  {" "}
-                  <h1>Some of my skills</h1>I disagree with quantifying skills
-                  with numbers, percentages etc. - are skills really something
-                  people can measure? However, here is a rough estimate of my
-                  latest skills.
-                  <h2>Design tools</h2>
-                  <h3>Figma</h3>
-                  <ProgressBar width={250} percent={90} />
-                  <h3>Adobe CC</h3>
-                  <ProgressBar width={250} percent={85} />
-                  <h3>Sketch, InVision</h3>
-                  <ProgressBar width={250} percent={85} />
-                  <h3>WCAG 2.1</h3>
-                  <ProgressBar width={250} percent={75} />
-                  <br />
-                  <h2>Dev tools</h2>
-                  <h3>Storybook(JS)</h3>
-                  <ProgressBar width={250} percent={75} />
-                  <h3>HTML, CSS, SASS</h3>
-                  <ProgressBar width={250} percent={75} />
-                  <h3>Wordpress (PHP/Themes)</h3>
-                  <ProgressBar width={250} percent={70} />
-                  <h3>Git</h3>
-                  <ProgressBar width={250} percent={60} />
-                  <h3>Raspberry Pi & Arduino</h3>
-                  <ProgressBar width={250} percent={30} />
-                  <h3>React</h3>
-                  <ProgressBar width={250} percent={30} />
-                  <h3>Vue</h3>
-                  <ProgressBar width={250} percent={15} />
-                  <br />
-                  <h2>Other Skills</h2>
-                  <ul>
-                    <li>Design systems</li>
-                    <li>User interviews</li>
-                    <li>User testing</li>
-                    <li>Wireframing and prototyping</li>
-                    <li>Visual design</li>
-                    <li>Research</li>
-                    <li>Copywriting and social Media</li>
-                    <li>Content creation</li>
-                    <li>Workshops</li>
-                    <li>Facilitation</li>
-                    <li>Concept creation</li>
-                  </ul>
+                  Next is a display of my main technical skills. I am mostly a
+                  visual lerner, some of these skills I have gathered watching
+                  other people doing it.
                 </p>
+                <h3>React</h3>
+                <ProgressBar width={250} percent={85} />
+                <h3>React Native</h3>
+                <ProgressBar width={250} percent={85} />
+                <h3>Storybook(JS)</h3>
+                <ProgressBar width={250} percent={75} />
+                <h3>HTML, CSS, SASS</h3>
+                <ProgressBar width={250} percent={75} />
+                <h3>Git</h3>
+                <ProgressBar width={250} percent={60} />
+                <h3>Next</h3>
+                <ProgressBar width={250} percent={50} />
+                <h3>Express</h3>
+                <ProgressBar width={250} percent={30} />
+                <h3>Firebase</h3>
+                <ProgressBar width={250} percent={30} />
+                <h3>Raspberry Pi & Arduino</h3>
+                <ProgressBar width={250} percent={30} />
               </div>
             </S.textModal>
           </S.layoutMainContent>
