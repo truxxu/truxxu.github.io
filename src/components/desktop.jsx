@@ -12,14 +12,7 @@ import socialMedia from "./socialMedia";
 import Shortcuts from "./desktopIcons";
 import * as S from "./layoutStyling";
 import "./styles.scss";
-import {
-  Progman37,
-  Mspaint,
-  User,
-  CdMusic,
-  Progman34,
-  Mail,
-} from "@react95/icons";
+import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
 
@@ -57,15 +50,6 @@ function Desktop() {
   }, []);
   const handleClosePhotoModal = useCallback(() => {
     setShowPhotoModal(false);
-  }, []);
-
-  /* Vaporwave Modal 1 */
-  const [showVaporwaveModal1, setShowVaporwaveModal1] = useState(false);
-  const handleOpenVaporwaveModal1 = useCallback(() => {
-    setShowVaporwaveModal1(true);
-  }, []);
-  const handleCloseVaporwaveModal1 = useCallback(() => {
-    setShowVaporwaveModal1(false);
   }, []);
 
   /* Portfolio Shortcut */
@@ -113,30 +97,27 @@ function Desktop() {
           <S.layoutMainContent bg="white" boxShadow="out">
             <S.textModal>
               <div class="text-content">
-                <h1>Moikka! 👋</h1>
+                <h1>Hola! 👋</h1>
                 <p>
-                  I am Janne, a designer with a UX/UI focus working at{" "}
-                  <a href="https://hs.fi/">Helsingin Sanomat</a>, the largest
-                  subscription newspaper in the Nordics. I am working as a
-                  designer-developer at the moment, focusing on creating
-                  award-winning storytelling solutions with HS Data Desk. Check
-                  out{" "}
-                  <a href="https://www.hs.fi/aihe/datajournalismi/">
-                    some of our latest stories.
-                  </a>
+                  I am Daniel, a mechanical engineer turned into software
+                  developer. Over the last few years I have been working as a
+                  Front End Developer for large companies, as a freelancer and
+                  also in my own startup,{" "}
+                  <a href="https://www.tatacoabitcoin.com/">Tatacoa Bitcoin</a>.
+                  I have experience building web and mobile applications using
+                  technologies such as React and React Native.
                 </p>
                 <p>
-                  This app, sort of a playground of ideas, has been built with
-                  Create React App and{" "}
+                  Some of my interests are Bitcoin, Web3, minimalism, low tech,
+                  analogue photography, thinkering with electronics and hiking.
+                </p>
+                <p>
+                  This app has been built with Create React App and{" "}
                   <a href="https://github.com/React95/React95">React95</a>, an
-                  open-source Windows95 component library for React.
-                </p>
-                <p>
-                  Oh and by the way, I made a{" "}
-                  <a href="https://www.figma.com/file/2cbigNitjcruBDZT12ixIq/React95-Design-Kit">
-                    Design Kit for React95
-                  </a>
-                  , check it out!
+                  open-source Windows95 component library for React. Inspired by
+                  the amazing works of{" "}
+                  <a href="https://janneilkka.com/">Janne Koivisto</a> and{" "}
+                  <a href="https://insafkhamzin.com/">Insaf Khamzin</a>.
                 </p>
               </div>
             </S.textModal>
@@ -225,59 +206,6 @@ function Desktop() {
           <div class="image-text">
             <p>janne_compressed_for_web.jpeg</p>
           </div>
-        </S.layoutMain>
-      )}
-      {showVaporwaveModal1 && (
-        <S.layoutMain
-          isMobile={isMobile}
-          closeModal={handleCloseVaporwaveModal1}
-          height="100%"
-          icon={<CdMusic variant="32x32_4" />}
-          width={340}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseVaporwaveModal1}>
-                    Close
-                  </List.Item>
-                </List>
-              ),
-            },
-          ]}
-          title="My_Alter_Ego.doc"
-        >
-          <S.textModal>
-            <div class="text-content">
-              <h1>A Vaporwave Album</h1>
-              <p>
-                In 2018 I took part in a workshop in Lithuania at the Vilnius
-                Art Academy in producing a Vaporwave Album with participants
-                coming in from around Europe.
-              </p>
-              <p>
-                Over the course of the weekend we produced music videos, songs
-                and more. I produced two songs for the album and a music video.
-                The album can be found on streaming services.
-              </p>
-              <a href="https://open.spotify.com/album/0pCqTDsI4zOZXZJnxx2yPT?si=JW5qpLJJQsO3eK2m65FQBQ">
-                The album on Spotify
-              </a>
-              <p></p>
-              <br></br>
-              <div>
-                <iframe
-                  src="https://www.youtube.com/embed/7SyxEF-QG_M"
-                  frameborder="0"
-                  width="100%"
-                  title="A Song from a Vaporwave Album"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </S.textModal>
         </S.layoutMain>
       )}
       <TaskBar
