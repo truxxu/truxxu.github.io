@@ -22,7 +22,6 @@ import {
 } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
-import Tunes from "./tunes";
 
 function Desktop() {
   /* Mobile detection */
@@ -90,18 +89,6 @@ function Desktop() {
   };
 
   const [cvOpened, toggleCV] = useState(false);
-
-  /* Tunes Shortcut */
-
-  const closeTunes = () => {
-    toggleTunes(false);
-  };
-
-  const openTunes = () => {
-    toggleTunes(true);
-  };
-
-  const [tunesOpened, toggleTunes] = useState(false);
 
   return (
     <ThemeProvider theme="win95">
@@ -345,17 +332,6 @@ function Desktop() {
                 ))}
               </List>
             </List.Item>
-            <List.Item icon={<CdMusic variant="32x32_4" />}>
-              Tunes
-              <List>
-                <List.Item
-                  onClick={handleOpenVaporwaveModal1}
-                  icon={<CdMusic variant="32x32_4" />}
-                >
-                  Janne's Vaporwave Story from 2018
-                </List.Item>
-              </List>
-            </List.Item>
             <List.Item
               icon={<User variant="32x32_4" />}
               onClick={handleOpenPhotoModal}
@@ -379,11 +355,7 @@ function Desktop() {
         }
       />
       <React.Fragment>
-        <Shortcuts
-          openPortfolio={openPortfolio}
-          openCV={openCV}
-          openTunes={openTunes}
-        />
+        <Shortcuts openPortfolio={openPortfolio} openCV={openCV} />
         {explorerOpened && (
           <Portfolio
             items={items}
@@ -392,9 +364,6 @@ function Desktop() {
           />
         )}
         {cvOpened && <CV items={items} closeCV={closeCV} isMobile={isMobile} />}
-        {tunesOpened && (
-          <Tunes items={items} closeTunes={closeTunes} isMobile={isMobile} />
-        )}
       </React.Fragment>
     </ThemeProvider>
   );
