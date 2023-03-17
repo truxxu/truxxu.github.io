@@ -7,7 +7,7 @@ import {
   ProgressBar,
   TaskBar,
 } from "@react95/core";
-import Janne_pixelated from "../janne_pixelated.png";
+import pixel from "../pixel.png";
 import socialMedia from "./socialMedia";
 import Shortcuts from "./desktopIcons";
 import * as S from "./layoutStyling";
@@ -176,7 +176,7 @@ function Desktop() {
       {showPhotoModal && (
         <S.layoutMain
           isMobile={isMobile}
-          title={"janne_compressed_for_web.jpeg"}
+          title={"Daniel_Trujillo.jpeg"}
           closeModal={handleClosePhotoModal}
           icon={<User variant="32x32_4" />}
           menu={[
@@ -197,14 +197,14 @@ function Desktop() {
             }}
           >
             <img
-              src={Janne_pixelated}
+              src={pixel}
               aria-hidden
-              alt="Janne as a pixelated image"
+              alt="Daniel"
               class="full-width-image"
             ></img>
           </Frame>
           <div class="image-text">
-            <p>janne_compressed_for_web.jpeg</p>
+            <p>Daniel_Trujillo.jpeg</p>
           </div>
         </S.layoutMain>
       )}
@@ -213,7 +213,7 @@ function Desktop() {
           <List>
             <List.Item
               as="a"
-              href="mailto:janne.ilkka@gmail.com"
+              href="mailto:danielfetrujillo@gmail.com"
               icon={<Mail variant="32x32_4" />}
               target="_blank"
             >
@@ -241,7 +241,7 @@ function Desktop() {
               icon={<User variant="32x32_4" />}
               onClick={handleOpenPhotoModal}
             >
-              Janne
+              Daniel
             </List.Item>
             <List.Item
               icon={<Mspaint variant="32x32_4" />}
@@ -260,7 +260,11 @@ function Desktop() {
         }
       />
       <React.Fragment>
-        <Shortcuts openPortfolio={openPortfolio} openCV={openCV} />
+        <Shortcuts
+          openPortfolio={openPortfolio}
+          openCV={openCV}
+          openSkills={handleOpenSkillsModal}
+        />
         {explorerOpened && (
           <Portfolio
             items={items}
