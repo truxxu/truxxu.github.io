@@ -4,6 +4,7 @@ import IconBox from "./iconBox";
 import IconText from "./iconText";
 import "./styles.scss";
 import { Awfxcg321303, Desk100, Mspaint, Earth } from "@react95/icons";
+import caco from "../caco.png";
 
 function Shortcuts({ openPortfolio, openCV, openSkills, openDoom }) {
   return (
@@ -23,8 +24,8 @@ function Shortcuts({ openPortfolio, openCV, openSkills, openDoom }) {
           <IconText className="pointer">Skills</IconText>
         </IconBox>
         <IconBox className="pointer" onClick={() => openDoom()}>
-          <Earth className="pointer" variant="32x32_4" />
-          <IconText className="pointer">Doom.exe</IconText>
+          <img className="pointer" src={caco} width={32} alt="Doom logo" />
+          <IconText className="pointer">Doom</IconText>
         </IconBox>
       </ThemeProvider>
     </div>

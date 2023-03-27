@@ -15,6 +15,7 @@ import "./styles.scss";
 import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
+import caco from "../caco.png";
 
 function Desktop() {
   /* Mobile detection */
@@ -222,7 +223,9 @@ function Desktop() {
           isMobile={isMobile}
           title={"Doom.exe"}
           closeModal={handleCloseDoomModal}
-          icon={<User variant="32x32_4" />}
+          icon={
+            <img className="pointer" src={caco} width={32} alt="Doom logo" />
+          }
           menu={[
             {
               name: "Options",
