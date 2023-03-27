@@ -3,9 +3,9 @@ import { GlobalStyle, ThemeProvider } from "@react95/core";
 import IconBox from "./iconBox";
 import IconText from "./iconText";
 import "./styles.scss";
-import { Awfxcg321303, Desk100, Mspaint } from "@react95/icons";
+import { Awfxcg321303, Desk100, Mspaint, Earth } from "@react95/icons";
 
-function Shortcuts({ openPortfolio, openCV, openSkills }) {
+function Shortcuts({ openPortfolio, openCV, openSkills, openDoom }) {
   return (
     <div>
       <ThemeProvider>
@@ -21,6 +21,10 @@ function Shortcuts({ openPortfolio, openCV, openSkills }) {
         <IconBox className="pointer" onClick={() => openSkills()}>
           <Mspaint className="pointer" variant="32x32_4" />
           <IconText className="pointer">Skills</IconText>
+        </IconBox>
+        <IconBox className="pointer" onClick={() => openDoom()}>
+          <Earth className="pointer" variant="32x32_4" />
+          <IconText className="pointer">Doom.exe</IconText>
         </IconBox>
       </ThemeProvider>
     </div>

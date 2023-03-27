@@ -52,6 +52,15 @@ function Desktop() {
     setShowPhotoModal(false);
   }, []);
 
+  /* Doom Modal */
+  const [showDoomModal, setShowDoomModal] = useState(false);
+  const handleOpenDoomModal = useCallback(() => {
+    setShowDoomModal(true);
+  }, []);
+  const handleCloseDoomModal = useCallback(() => {
+    setShowDoomModal(false);
+  }, []);
+
   /* Portfolio Shortcut */
   const closePortfolio = () => {
     togglePortfolio(false);
@@ -208,6 +217,26 @@ function Desktop() {
           </div>
         </S.layoutMain>
       )}
+      {showDoomModal && (
+        <S.layoutMain
+          isMobile={isMobile}
+          title={"Doom.exe"}
+          closeModal={handleCloseDoomModal}
+          icon={<User variant="32x32_4" />}
+          menu={[
+            {
+              name: "Options",
+              list: (
+                <List>
+                  <List.Item onClick={handleCloseDoomModal}>Close</List.Item>
+                </List>
+              ),
+            },
+          ]}
+        >
+          <p>Test</p>
+        </S.layoutMain>
+      )}
       <TaskBar
         list={
           <List>
@@ -264,6 +293,7 @@ function Desktop() {
           openPortfolio={openPortfolio}
           openCV={openCV}
           openSkills={handleOpenSkillsModal}
+          openDoom={handleOpenDoomModal}
         />
         {explorerOpened && (
           <Portfolio
