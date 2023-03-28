@@ -24,7 +24,7 @@ function Portfolio({ closePortfolio, isMobile }) {
     >
       <S.layoutMainContent bg="white" boxShadow="in">
         <S.textModal>
-          <div class="text-content">
+          <div className="text-content">
             <h1>Projects</h1>
             <p>
               This is a brief overlook to some of the projects that I have been
@@ -37,7 +37,7 @@ function Portfolio({ closePortfolio, isMobile }) {
               <h3>Tech Stack</h3>
               React Native, Fastlane, i18next, React Hook Form, SWR
             </p>
-            <div class="links-group">
+            <div className="links-group">
               <a
                 href="https://play.google.com/store/apps/details?id=com.tatacoabitcoin.wallet&gl=US"
                 target={"_blank"}
@@ -61,7 +61,7 @@ function Portfolio({ closePortfolio, isMobile }) {
               <h3>Tech Stack</h3>
               React Native, i18next, React Hook Form, SWR
             </p>
-            <div class="links-group">
+            <div className="links-group">
               <a
                 href="https://play.google.com/store/apps/details/Tatacoa_BTM?id=com.btm&gl=US"
                 target={"_blank"}
@@ -91,7 +91,7 @@ function Portfolio({ closePortfolio, isMobile }) {
               <h3>Tech Stack</h3>
               React Native, i18next, React Hook Form, SWR
             </p>
-            <div class="links-group">
+            <div className="links-group">
               <a
                 href="https://github.com/truxxu/mobile-wallet"
                 target={"_blank"}
@@ -116,7 +116,7 @@ function Portfolio({ closePortfolio, isMobile }) {
               <h3>Tech Stack</h3>
               React, Express, Bootstrap, SWR
             </p>
-            <div class="links-group">
+            <div className="links-group">
               <a
                 href="https://www.dashboard.tatacoabitcoin.com/"
                 target={"_blank"}
@@ -139,7 +139,7 @@ function Portfolio({ closePortfolio, isMobile }) {
               <h3>Tech Stack</h3>
               Next, Bootstrap
             </p>
-            <div class="links-group">
+            <div className="links-group">
               <a
                 href="https://github.com/TatacoaBitcoin/api-docs-next"
                 target={"_blank"}
@@ -155,7 +155,7 @@ function Portfolio({ closePortfolio, isMobile }) {
               <h3>Tech Stack</h3>
               Gatsby
             </p>
-            <div class="links-group">
+            <div className="links-group">
               <a
                 href="https://tatacoabitcoin.github.io/wiki/"
                 target={"_blank"}

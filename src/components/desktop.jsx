@@ -15,6 +15,7 @@ import "./styles.scss";
 import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
+import caco from "../caco.png";
 
 function Desktop() {
   /* Mobile detection */
@@ -50,6 +51,15 @@ function Desktop() {
   }, []);
   const handleClosePhotoModal = useCallback(() => {
     setShowPhotoModal(false);
+  }, []);
+
+  /* Doom Modal */
+  const [showDoomModal, setShowDoomModal] = useState(false);
+  const handleOpenDoomModal = useCallback(() => {
+    setShowDoomModal(true);
+  }, []);
+  const handleCloseDoomModal = useCallback(() => {
+    setShowDoomModal(false);
   }, []);
 
   /* Portfolio Shortcut */
@@ -96,7 +106,7 @@ function Desktop() {
         >
           <S.layoutMainContent bg="white" boxShadow="out">
             <S.textModal>
-              <div class="text-content">
+              <div className="text-content">
                 <h1>Hola! 👋</h1>
                 <p>
                   I am Daniel, a mechanical engineer turned into software
@@ -143,7 +153,7 @@ function Desktop() {
         >
           <S.layoutMainContent bg="white" boxShadow="in">
             <S.textModal>
-              <div class="text-content">
+              <div className="text-content">
                 <h1>Technical Skills</h1>
                 <p>
                   Next is a display of my main technical skills. I am mostly a
@@ -200,12 +210,42 @@ function Desktop() {
               src={pixel}
               aria-hidden
               alt="Daniel"
-              class="full-width-image"
+              className="full-width-image"
             ></img>
           </Frame>
-          <div class="image-text">
+          <div className="image-text">
             <p>Daniel_Trujillo.jpeg</p>
           </div>
+        </S.layoutMain>
+      )}
+      {showDoomModal && (
+        <S.layoutMain
+          isMobile={isMobile}
+          title={"Doom.exe"}
+          closeModal={handleCloseDoomModal}
+          icon={
+            <img className="pointer" src={caco} width={32} alt="Doom logo" />
+          }
+          menu={[
+            {
+              name: "Options",
+              list: (
+                <List>
+                  <List.Item onClick={handleCloseDoomModal}>Close</List.Item>
+                </List>
+              ),
+            },
+          ]}
+        >
+          <iframe
+            title="doom"
+            width="680"
+            height="400"
+            frameBorder="0"
+            src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos?anonymous=1"
+            allowFullScreen
+            allow="autoplay"
+          ></iframe>
         </S.layoutMain>
       )}
       <TaskBar
@@ -264,6 +304,7 @@ function Desktop() {
           openPortfolio={openPortfolio}
           openCV={openCV}
           openSkills={handleOpenSkillsModal}
+          openDoom={handleOpenDoomModal}
         />
         {explorerOpened && (
           <Portfolio

@@ -24,7 +24,7 @@ function CV({ closeCV, isMobile }) {
     >
       <S.layoutMainContent bg="white" boxShadow="in">
         <S.textModal>
-          <div class="text-content">
+          <div className="text-content">
             <h1>Curriculum Vitae</h1>
             <p>
               Mechanical engineer with a Master's degree in Energy Technology.
