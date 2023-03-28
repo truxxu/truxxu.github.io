@@ -11,7 +11,7 @@ const PageProps = {
 
 const Page = ({ children, description = null, title = "Daniel Trujillo" }) => (
   <>
-    <body class="background">
+    <body className="background">
       <Box as="main">{children}</Box>
     </body>
   </>

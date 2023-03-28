@@ -106,7 +106,7 @@ function Desktop() {
         >
           <S.layoutMainContent bg="white" boxShadow="out">
             <S.textModal>
-              <div class="text-content">
+              <div className="text-content">
                 <h1>Hola! 👋</h1>
                 <p>
                   I am Daniel, a mechanical engineer turned into software
@@ -153,7 +153,7 @@ function Desktop() {
         >
           <S.layoutMainContent bg="white" boxShadow="in">
             <S.textModal>
-              <div class="text-content">
+              <div className="text-content">
                 <h1>Technical Skills</h1>
                 <p>
                   Next is a display of my main technical skills. I am mostly a
@@ -210,10 +210,10 @@ function Desktop() {
               src={pixel}
               aria-hidden
               alt="Daniel"
-              class="full-width-image"
+              className="full-width-image"
             ></img>
           </Frame>
-          <div class="image-text">
+          <div className="image-text">
             <p>Daniel_Trujillo.jpeg</p>
           </div>
         </S.layoutMain>
@@ -237,7 +237,15 @@ function Desktop() {
             },
           ]}
         >
-          <p>Test</p>
+          <iframe
+            title="doom"
+            width="680"
+            height="400"
+            frameBorder="0"
+            src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos?anonymous=1"
+            allowFullScreen
+            allow="autoplay"
+          ></iframe>
         </S.layoutMain>
       )}
       <TaskBar
