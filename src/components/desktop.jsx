@@ -10,7 +10,7 @@ import "./styles.scss";
 import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
-import caco from "../caco.png";
+
 
 function Desktop() {
   /* Mobile detection */
@@ -46,15 +46,6 @@ function Desktop() {
   }, []);
   const handleClosePhotoModal = useCallback(() => {
     setShowPhotoModal(false);
-  }, []);
-
-  /* Doom Modal */
-  const [showDoomModal, setShowDoomModal] = useState(false);
-  const handleOpenDoomModal = useCallback(() => {
-    setShowDoomModal(true);
-  }, []);
-  const handleCloseDoomModal = useCallback(() => {
-    setShowDoomModal(false);
   }, []);
 
   /* Portfolio Shortcut */
@@ -212,36 +203,6 @@ function Desktop() {
           </div>
         </S.layoutMain>
       )}
-      {showDoomModal && (
-        <S.layoutMain
-          isMobile={isMobile}
-          title={"Doom.exe"}
-          titleBarOptions={<TitleBar.Close onClick={handleCloseDoomModal} />}
-          icon={
-            <img className="pointer" src={caco} width={32} alt="Doom logo" />
-          }
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseDoomModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
-        >
-          <iframe
-            title="doom"
-            width="680"
-            height="400"
-            frameBorder="0"
-            src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos?anonymous=1"
-            allowFullScreen
-            allow="autoplay"
-          ></iframe>
-        </S.layoutMain>
-      )}
       <TaskBar
         list={
           <List>
@@ -297,7 +258,7 @@ function Desktop() {
           openPortfolio={openPortfolio}
           openCV={openCV}
           openSkills={handleOpenSkillsModal}
-          openDoom={handleOpenDoomModal}
+
         />
         {explorerOpened && (
           <Portfolio

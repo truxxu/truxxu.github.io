@@ -19,7 +19,7 @@ The app simulates a Windows 95 desktop with clickable icons that open modal "win
 
 **Entry point:** `src/index.js` → `src/App.js` → wraps everything in React95's `ThemeProvider`
 
-**Core component:** `src/components/desktop.jsx` — The main orchestrator. Manages all modal state (About, Skills, Photo, Doom, Portfolio, CV) via individual `useState`/`useCallback` hooks. Also renders the Windows 95 `TaskBar` with a start menu and desktop icon shortcuts.
+**Core component:** `src/components/desktop.jsx` — The main orchestrator. Manages all modal state (About, Skills, Photo, Portfolio, CV) via individual `useState`/`useCallback` hooks. Also renders the Windows 95 `TaskBar` with a start menu and desktop icon shortcuts.
 
 **Modal content components** (rendered conditionally in `desktop.jsx`):
 - `portfolio.jsx` — Project showcase
