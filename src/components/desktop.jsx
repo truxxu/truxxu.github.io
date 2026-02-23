@@ -1,31 +1,23 @@
-import React, { useState, useCallback } from "react";
-import {
-  GlobalStyle,
-  ThemeProvider,
-  List,
-  Frame,
-  ProgressBar,
-  TaskBar,
-} from "@react95/core";
+import React, { useState, useCallback, useMemo } from "react";
+import { List, Frame, ProgressBar, TaskBar, TitleBar } from "@react95/core";
 import pixel from "../pixel.png";
 import socialMedia from "./socialMedia";
 import Shortcuts from "./desktopIcons";
-import * as S from "./layoutStyling";
+import { LayoutMain, LayoutMainContent, TextModal } from "./layoutStyling";
 import "./styles.scss";
 import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
-import caco from "../caco.png";
+
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
+  );
+
+const contentStyle = { margin: 0, width: "100%" };
+const frameStyle = { margin: "auto" };
 
 function Desktop() {
-  /* Mobile detection */
-  const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
-
-  const [items] = useState([]);
-
   /* About Modal */
   const [showAboutModal, setShowAboutModal] = useState(true);
   const handleOpenAboutModal = useCallback(() => {
@@ -53,59 +45,78 @@ function Desktop() {
     setShowPhotoModal(false);
   }, []);
 
-  /* Doom Modal */
-  const [showDoomModal, setShowDoomModal] = useState(false);
-  const handleOpenDoomModal = useCallback(() => {
-    setShowDoomModal(true);
-  }, []);
-  const handleCloseDoomModal = useCallback(() => {
-    setShowDoomModal(false);
-  }, []);
-
-  /* Portfolio Shortcut */
-  const closePortfolio = () => {
-    togglePortfolio(false);
-  };
-
-  const openPortfolio = () => {
-    togglePortfolio(true);
-  };
+  /* Portfolio Modal */
   const [explorerOpened, togglePortfolio] = useState(false);
+  const openPortfolio = useCallback(() => {
+    togglePortfolio(true);
+  }, []);
+  const closePortfolio = useCallback(() => {
+    togglePortfolio(false);
+  }, []);
 
-  /* CV Shortcut */
-
-  const closeCV = () => {
-    toggleCV(false);
-  };
-
-  const openCV = () => {
-    toggleCV(true);
-  };
-
+  /* CV Modal */
   const [cvOpened, toggleCV] = useState(false);
+  const openCV = useCallback(() => {
+    toggleCV(true);
+  }, []);
+  const closeCV = useCallback(() => {
+    toggleCV(false);
+  }, []);
+
+  const aboutMenu = useMemo(
+    () => [
+      {
+        name: "Options",
+        list: (
+          <List>
+            <List.Item onClick={handleCloseAboutModal}>Close</List.Item>
+          </List>
+        ),
+      },
+    ],
+    [handleCloseAboutModal],
+  );
+
+  const skillsMenu = useMemo(
+    () => [
+      {
+        name: "Options",
+        list: (
+          <List>
+            <List.Item onClick={handleCloseSkillsModal}>Close</List.Item>
+          </List>
+        ),
+      },
+    ],
+    [handleCloseSkillsModal],
+  );
+
+  const photoMenu = useMemo(
+    () => [
+      {
+        name: "Options",
+        list: (
+          <List>
+            <List.Item onClick={handleClosePhotoModal}>Close</List.Item>
+          </List>
+        ),
+      },
+    ],
+    [handleClosePhotoModal],
+  );
 
   return (
-    <ThemeProvider theme="win95">
-      <GlobalStyle></GlobalStyle>
+    <>
       {showAboutModal && (
-        <S.layoutMain
+        <LayoutMain
           isMobile={isMobile}
           icon={<Progman37 variant="32x32_4" />}
           title={"About.txt"}
-          closeModal={handleCloseAboutModal}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseAboutModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+          titleBarOptions={<TitleBar.Close onClick={handleCloseAboutModal} />}
+          menu={aboutMenu}
         >
-          <S.layoutMainContent bg="white" boxShadow="out">
-            <S.textModal>
+          <LayoutMainContent bg="white" boxShadow="out">
+            <TextModal>
               <div className="text-content">
                 <h1>Hola! 👋</h1>
                 <p>
@@ -130,29 +141,20 @@ function Desktop() {
                   <a href="https://insafkhamzin.com/">Insaf Khamzin</a>.
                 </p>
               </div>
-            </S.textModal>
-          </S.layoutMainContent>
-        </S.layoutMain>
+            </TextModal>
+          </LayoutMainContent>
+        </LayoutMain>
       )}
       {showSkillsModal && (
-        <S.layoutMain
+        <LayoutMain
           isMobile={isMobile}
           title={"Skills.txt"}
-          closeModal={handleCloseSkillsModal}
+          titleBarOptions={<TitleBar.Close onClick={handleCloseSkillsModal} />}
           icon={<Mspaint variant="32x32_4" />}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseSkillsModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+          menu={skillsMenu}
         >
-          <S.layoutMainContent bg="white" boxShadow="in">
-            <S.textModal>
+          <LayoutMainContent bg="white" boxShadow="in" style={contentStyle}>
+            <TextModal>
               <div className="text-content">
                 <h1>Technical Skills</h1>
                 <p>
@@ -179,33 +181,19 @@ function Desktop() {
                 <h3>Raspberry Pi & Arduino</h3>
                 <ProgressBar width={250} percent={30} />
               </div>
-            </S.textModal>
-          </S.layoutMainContent>
-        </S.layoutMain>
+            </TextModal>
+          </LayoutMainContent>
+        </LayoutMain>
       )}
       {showPhotoModal && (
-        <S.layoutMain
+        <LayoutMain
           isMobile={isMobile}
           title={"Daniel_Trujillo.jpeg"}
-          closeModal={handleClosePhotoModal}
+          titleBarOptions={<TitleBar.Close onClick={handleClosePhotoModal} />}
           icon={<User variant="32x32_4" />}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleClosePhotoModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+          menu={photoMenu}
         >
-          <Frame
-            boxShadow="none"
-            style={{
-              margin: "auto",
-            }}
-          >
+          <Frame boxShadow="none" style={frameStyle}>
             <img
               src={pixel}
               aria-hidden
@@ -216,46 +204,16 @@ function Desktop() {
           <div className="image-text">
             <p>Daniel_Trujillo.jpeg</p>
           </div>
-        </S.layoutMain>
-      )}
-      {showDoomModal && (
-        <S.layoutMain
-          isMobile={isMobile}
-          title={"Doom.exe"}
-          closeModal={handleCloseDoomModal}
-          icon={
-            <img className="pointer" src={caco} width={32} alt="Doom logo" />
-          }
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseDoomModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
-        >
-          <iframe
-            title="doom"
-            width="680"
-            height="400"
-            frameBorder="0"
-            src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos?anonymous=1"
-            allowFullScreen
-            allow="autoplay"
-          ></iframe>
-        </S.layoutMain>
+        </LayoutMain>
       )}
       <TaskBar
         list={
           <List>
             <List.Item
-              as="a"
-              href="mailto:danielfetrujillo@gmail.com"
               icon={<Mail variant="32x32_4" />}
-              target="_blank"
+              onClick={() =>
+                window.open("mailto:danielfetrujillo@gmail.com", "_blank")
+              }
             >
               Email me
             </List.Item>
@@ -265,12 +223,11 @@ function Desktop() {
               <List>
                 {socialMedia.map(({ icon, name, url }) => (
                   <List.Item
-                    as="a"
-                    href={url}
                     icon={icon}
                     key={name}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    onClick={() =>
+                      window.open(url, "_blank", "noopener,noreferrer")
+                    }
                   >
                     {name}
                   </List.Item>
@@ -299,23 +256,16 @@ function Desktop() {
           </List>
         }
       />
-      <React.Fragment>
-        <Shortcuts
-          openPortfolio={openPortfolio}
-          openCV={openCV}
-          openSkills={handleOpenSkillsModal}
-          openDoom={handleOpenDoomModal}
-        />
-        {explorerOpened && (
-          <Portfolio
-            items={items}
-            closePortfolio={closePortfolio}
-            isMobile={isMobile}
-          />
-        )}
-        {cvOpened && <CV items={items} closeCV={closeCV} isMobile={isMobile} />}
-      </React.Fragment>
-    </ThemeProvider>
+      <Shortcuts
+        openPortfolio={openPortfolio}
+        openCV={openCV}
+        openSkills={handleOpenSkillsModal}
+      />
+      {explorerOpened && (
+        <Portfolio closePortfolio={closePortfolio} isMobile={isMobile} />
+      )}
+      {cvOpened && <CV closeCV={closeCV} isMobile={isMobile} />}
+    </>
   );
 }
 

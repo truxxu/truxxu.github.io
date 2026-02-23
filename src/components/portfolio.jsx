@@ -1,15 +1,16 @@
 import React from "react";
-import { List } from "@react95/core";
+import { List, TitleBar } from "@react95/core";
 import { Desk100 } from "@react95/icons";
-import * as S from "./layoutStyling";
+import { LayoutMain, LayoutMainContent, TextModal } from "./layoutStyling";
+
+const contentStyle = { margin: 0, width: "100%" };
 
 function Portfolio({ closePortfolio, isMobile }) {
   return (
-    <S.layoutMain
+    <LayoutMain
       isMobile={isMobile}
       title={"Projects"}
-      closeModal={closePortfolio}
-      height="100%"
+      titleBarOptions={<TitleBar.Close onClick={closePortfolio} />}
       icon={<Desk100 variant="32x32_4" />}
       menu={[
         {
@@ -22,8 +23,8 @@ function Portfolio({ closePortfolio, isMobile }) {
         },
       ]}
     >
-      <S.layoutMainContent bg="white" boxShadow="in">
-        <S.textModal>
+      <LayoutMainContent bg="white" boxShadow="in" style={contentStyle}>
+        <TextModal>
           <div className="text-content">
             <h1>Projects</h1>
             <p>
@@ -173,9 +174,9 @@ function Portfolio({ closePortfolio, isMobile }) {
             </div>
             <hr />
           </div>
-        </S.textModal>
-      </S.layoutMainContent>
-    </S.layoutMain>
+        </TextModal>
+      </LayoutMainContent>
+    </LayoutMain>
   );
 }
 

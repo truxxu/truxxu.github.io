@@ -1,15 +1,16 @@
 import React from "react";
-import { List } from "@react95/core";
+import { List, TitleBar } from "@react95/core";
 import { Awfxcg321303 } from "@react95/icons";
-import * as S from "./layoutStyling";
+import { LayoutMain, LayoutMainContent, TextModal } from "./layoutStyling";
+
+const contentStyle = { margin: 0, width: "100%" };
 
 function CV({ closeCV, isMobile }) {
   return (
-    <S.layoutMain
+    <LayoutMain
       isMobile={isMobile}
       title={"CV.txt"}
-      closeModal={closeCV}
-      height="100%"
+      titleBarOptions={<TitleBar.Close onClick={closeCV} />}
       icon={<Awfxcg321303 variant="32x32_4" />}
       menu={[
         {
@@ -22,8 +23,8 @@ function CV({ closeCV, isMobile }) {
         },
       ]}
     >
-      <S.layoutMainContent bg="white" boxShadow="in">
-        <S.textModal>
+      <LayoutMainContent bg="white" boxShadow="in" style={contentStyle}>
+        <TextModal>
           <div className="text-content">
             <h1>Curriculum Vitae</h1>
             <p>
@@ -36,12 +37,24 @@ function CV({ closeCV, isMobile }) {
             <h3>Frontend Developer - Freelance</h3>
             <h4>Jun. 2022 - presently</h4>
             <p>
-              Designed and developed MVPs of websites and mobile apps for a
-              client with no prior experience with customer-facing applications.
+              Designed and developed MVPs of websites and mobile apps for
+              corporate clients with no prior experience with customer-facing
+              applications.
             </p>
             <p>
               Integrated a payment gateway into a web app for a b2b fintech
               product.
+            </p>
+            <p>Designed, built and published mobile banking apps.</p>
+            <h3>Mobile Engineer - Satoshi</h3>
+            <h4>Apr. 2024 - May 2025</h4>
+            <p>
+              Collaborated with designers to deliver a seamless user experience.
+            </p>
+            <p>Developed new features for a mobile Bitcoin wallet.</p>
+            <p>
+              Led an effort to adopt best practices for mobile app security and
+              performance
             </p>
             <h3>Co-Founder - Tatacoa Bitcoin</h3>
             <h4>Feb. 2021 - presently</h4>
@@ -92,7 +105,7 @@ function CV({ closeCV, isMobile }) {
               Ensured code follows good practices and meet quality standards
               before being pushed to production
             </p>
-            <h3>Co-Founder - Corporación HorMinka</h3>
+            <h3>Co-Founder - Corporaci&oacute;n HorMinka</h3>
             <h4>Jan 2016 - Nov 2017</h4>
             <p>
               Started a non-profit organisation to promote science and
@@ -120,7 +133,7 @@ function CV({ closeCV, isMobile }) {
               Lappeenranta University of Technology, Lappeenranta, 2012-2015
             </h4>
             <h3>BSc in Mechanical Engineering</h3>
-            <h4>Universidad de América, Bogota, 2005-2010</h4>
+            <h4>Universidad de Am&eacute;rica, Bogota, 2005-2010</h4>
             <hr />
             <h2>Languages</h2>
             <ul>
@@ -129,9 +142,9 @@ function CV({ closeCV, isMobile }) {
               <li>German (basic)</li>
             </ul>
           </div>
-        </S.textModal>
-      </S.layoutMainContent>
-    </S.layoutMain>
+        </TextModal>
+      </LayoutMainContent>
+    </LayoutMain>
   );
 }
 

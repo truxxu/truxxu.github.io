@@ -4,21 +4,15 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.11.6",
-    "@react95/core": "^5.7.3",
-    "@react95/icons": "^2.0.4",
-    "babel-loader": "^8.1.0",
-    "eslint": "^7.10.0",
-    "node-sass": "^7.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-iframe": "^1.8.0",
-    "react-player": "^2.6.2",
-    "react-scripts": "^5.0.0",
-    "styled-components": "^4.4.1",
-    "styled-media-query": "^2.1.2",
-    "yarn": "^1.22.10"
+    "@react95/core": "^9.6.3",
+    "@react95/icons": "^2.2.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.97.0",
+    "styled-components": "^6.1.0",
+    "styled-media-query": "^2.1.2"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -42,10 +36,17 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "@react95/core/GlobalStyle": "<rootDir>/src/__mocks__/styleMock.js",
+      "@react95/core/themes/(.*)": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@react95|@neodrag|@vanilla-extract|rainbow-sprinkles|nanoid|usehooks-ts)/)"
+    ]
+  },
   "devDependencies": {
-    "eslint-config-react-app": "^7.0.0",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "gh-pages": "^3.1.0",
-    "prettier": "2.3.0"
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.8.0"
   }
 }
