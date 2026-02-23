@@ -9,7 +9,6 @@ function CV({ closeCV, isMobile }) {
       isMobile={isMobile}
       title={"CV.txt"}
       titleBarOptions={<TitleBar.Close onClick={closeCV} />}
-      height="100%"
       icon={<Awfxcg321303 variant="32x32_4" />}
       menu={[
         {
@@ -22,7 +21,11 @@ function CV({ closeCV, isMobile }) {
         },
       ]}
     >
-      <S.layoutMainContent bg="white" boxShadow="in">
+      <S.layoutMainContent
+        bg="white"
+        boxShadow="in"
+        style={{ margin: 0, width: "100%" }}
+      >
         <S.textModal>
           <div className="text-content">
             <h1>Curriculum Vitae</h1>

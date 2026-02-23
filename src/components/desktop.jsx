@@ -11,12 +11,11 @@ import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
 
-
 function Desktop() {
   /* Mobile detection */
   const isMobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
+      navigator.userAgent,
     );
 
   const [items] = useState([]);
@@ -136,7 +135,11 @@ function Desktop() {
             },
           ]}
         >
-          <S.layoutMainContent bg="white" boxShadow="in">
+          <S.layoutMainContent
+            bg="white"
+            boxShadow="in"
+            style={{ margin: 0, width: "100%" }}
+          >
             <S.textModal>
               <div className="text-content">
                 <h1>Technical Skills</h1>
@@ -258,7 +261,6 @@ function Desktop() {
           openPortfolio={openPortfolio}
           openCV={openCV}
           openSkills={handleOpenSkillsModal}
-
         />
         {explorerOpened && (
           <Portfolio

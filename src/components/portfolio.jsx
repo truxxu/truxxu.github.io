@@ -9,7 +9,6 @@ function Portfolio({ closePortfolio, isMobile }) {
       isMobile={isMobile}
       title={"Projects"}
       titleBarOptions={<TitleBar.Close onClick={closePortfolio} />}
-      height="100%"
       icon={<Desk100 variant="32x32_4" />}
       menu={[
         {
@@ -22,7 +21,11 @@ function Portfolio({ closePortfolio, isMobile }) {
         },
       ]}
     >
-      <S.layoutMainContent bg="white" boxShadow="in">
+      <S.layoutMainContent
+        bg="white"
+        boxShadow="in"
+        style={{ margin: 0, width: "100%" }}
+      >
         <S.textModal>
           <div className="text-content">
             <h1>Projects</h1>
