@@ -37,12 +37,24 @@ function CV({ closeCV, isMobile }) {
             <h3>Frontend Developer - Freelance</h3>
             <h4>Jun. 2022 - presently</h4>
             <p>
-              Designed and developed MVPs of websites and mobile apps for a
-              client with no prior experience with customer-facing applications.
+              Designed and developed MVPs of websites and mobile apps for
+              corporate clients with no prior experience with customer-facing
+              applications.
             </p>
             <p>
               Integrated a payment gateway into a web app for a b2b fintech
               product.
+            </p>
+            <p>Designed, built and published mobile banking apps.</p>
+            <h3>Mobile Engineer - Satoshi</h3>
+            <h4>Apr. 2024 - May 2025</h4>
+            <p>
+              Collaborated with designers to deliver a seamless user experience.
+            </p>
+            <p>Developed new features for a mobile Bitcoin wallet.</p>
+            <p>
+              Led an effort to adopt best practices for mobile app security and
+              performance
             </p>
             <h3>Co-Founder - Tatacoa Bitcoin</h3>
             <h4>Feb. 2021 - presently</h4>
