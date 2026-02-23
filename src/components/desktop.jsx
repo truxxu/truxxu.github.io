@@ -246,10 +246,10 @@ function Desktop() {
         list={
           <List>
             <List.Item
-              as="a"
-              href="mailto:danielfetrujillo@gmail.com"
               icon={<Mail variant="32x32_4" />}
-              target="_blank"
+              onClick={() =>
+                window.open("mailto:danielfetrujillo@gmail.com", "_blank")
+              }
             >
               Email me
             </List.Item>
@@ -259,12 +259,11 @@ function Desktop() {
               <List>
                 {socialMedia.map(({ icon, name, url }) => (
                   <List.Item
-                    as="a"
-                    href={url}
                     icon={icon}
                     key={name}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    onClick={() =>
+                      window.open(url, "_blank", "noopener,noreferrer")
+                    }
                   >
                     {name}
                   </List.Item>
