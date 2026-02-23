@@ -2,9 +2,7 @@ import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Modal, Frame } from "@react95/core";
 
-export const layoutWrapper = styled.section``;
-
-export const layoutMain = styled(Modal)`
+export const LayoutMain = styled(Modal)`
   display: flex;
   margin: 0 10rem 10rem 10rem;
   width: 80vh;
@@ -21,7 +19,7 @@ export const layoutMain = styled(Modal)`
     `}
 `;
 
-export const layoutMainContent = styled(Frame)`
+export const LayoutMainContent = styled(Frame)`
   overflow-y: auto;
   max-height: 70vh;
   margin: auto;
@@ -31,7 +29,7 @@ export const layoutMainContent = styled(Frame)`
   `}
 `;
 
-export const textModal = styled(Frame)`
+export const TextModal = styled(Frame)`
   background: #fff;
   boxshadow: in;
   height: 100%;

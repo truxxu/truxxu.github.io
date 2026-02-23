@@ -1,25 +1,23 @@
-import React, { useState, useCallback } from "react";
-import "@react95/core/GlobalStyle";
-import "@react95/core/themes/win95.css";
+import React, { useState, useCallback, useMemo } from "react";
 import { List, Frame, ProgressBar, TaskBar, TitleBar } from "@react95/core";
 import pixel from "../pixel.png";
 import socialMedia from "./socialMedia";
 import Shortcuts from "./desktopIcons";
-import * as S from "./layoutStyling";
+import { LayoutMain, LayoutMainContent, TextModal } from "./layoutStyling";
 import "./styles.scss";
 import { Progman37, Mspaint, User, Progman34, Mail } from "@react95/icons";
 import Portfolio from "./portfolio";
 import CV from "./cv";
 
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
+  );
+
+const contentStyle = { margin: 0, width: "100%" };
+const frameStyle = { margin: "auto" };
+
 function Desktop() {
-  /* Mobile detection */
-  const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    );
-
-  const [items] = useState([]);
-
   /* About Modal */
   const [showAboutModal, setShowAboutModal] = useState(true);
   const handleOpenAboutModal = useCallback(() => {
@@ -47,49 +45,78 @@ function Desktop() {
     setShowPhotoModal(false);
   }, []);
 
-  /* Portfolio Shortcut */
-  const closePortfolio = () => {
-    togglePortfolio(false);
-  };
-
-  const openPortfolio = () => {
-    togglePortfolio(true);
-  };
+  /* Portfolio Modal */
   const [explorerOpened, togglePortfolio] = useState(false);
+  const openPortfolio = useCallback(() => {
+    togglePortfolio(true);
+  }, []);
+  const closePortfolio = useCallback(() => {
+    togglePortfolio(false);
+  }, []);
 
-  /* CV Shortcut */
-
-  const closeCV = () => {
-    toggleCV(false);
-  };
-
-  const openCV = () => {
-    toggleCV(true);
-  };
-
+  /* CV Modal */
   const [cvOpened, toggleCV] = useState(false);
+  const openCV = useCallback(() => {
+    toggleCV(true);
+  }, []);
+  const closeCV = useCallback(() => {
+    toggleCV(false);
+  }, []);
+
+  const aboutMenu = useMemo(
+    () => [
+      {
+        name: "Options",
+        list: (
+          <List>
+            <List.Item onClick={handleCloseAboutModal}>Close</List.Item>
+          </List>
+        ),
+      },
+    ],
+    [handleCloseAboutModal],
+  );
+
+  const skillsMenu = useMemo(
+    () => [
+      {
+        name: "Options",
+        list: (
+          <List>
+            <List.Item onClick={handleCloseSkillsModal}>Close</List.Item>
+          </List>
+        ),
+      },
+    ],
+    [handleCloseSkillsModal],
+  );
+
+  const photoMenu = useMemo(
+    () => [
+      {
+        name: "Options",
+        list: (
+          <List>
+            <List.Item onClick={handleClosePhotoModal}>Close</List.Item>
+          </List>
+        ),
+      },
+    ],
+    [handleClosePhotoModal],
+  );
 
   return (
     <>
       {showAboutModal && (
-        <S.layoutMain
+        <LayoutMain
           isMobile={isMobile}
           icon={<Progman37 variant="32x32_4" />}
           title={"About.txt"}
           titleBarOptions={<TitleBar.Close onClick={handleCloseAboutModal} />}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseAboutModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+          menu={aboutMenu}
         >
-          <S.layoutMainContent bg="white" boxShadow="out">
-            <S.textModal>
+          <LayoutMainContent bg="white" boxShadow="out">
+            <TextModal>
               <div className="text-content">
                 <h1>Hola! 👋</h1>
                 <p>
@@ -114,33 +141,20 @@ function Desktop() {
                   <a href="https://insafkhamzin.com/">Insaf Khamzin</a>.
                 </p>
               </div>
-            </S.textModal>
-          </S.layoutMainContent>
-        </S.layoutMain>
+            </TextModal>
+          </LayoutMainContent>
+        </LayoutMain>
       )}
       {showSkillsModal && (
-        <S.layoutMain
+        <LayoutMain
           isMobile={isMobile}
           title={"Skills.txt"}
           titleBarOptions={<TitleBar.Close onClick={handleCloseSkillsModal} />}
           icon={<Mspaint variant="32x32_4" />}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseSkillsModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+          menu={skillsMenu}
         >
-          <S.layoutMainContent
-            bg="white"
-            boxShadow="in"
-            style={{ margin: 0, width: "100%" }}
-          >
-            <S.textModal>
+          <LayoutMainContent bg="white" boxShadow="in" style={contentStyle}>
+            <TextModal>
               <div className="text-content">
                 <h1>Technical Skills</h1>
                 <p>
@@ -167,33 +181,19 @@ function Desktop() {
                 <h3>Raspberry Pi & Arduino</h3>
                 <ProgressBar width={250} percent={30} />
               </div>
-            </S.textModal>
-          </S.layoutMainContent>
-        </S.layoutMain>
+            </TextModal>
+          </LayoutMainContent>
+        </LayoutMain>
       )}
       {showPhotoModal && (
-        <S.layoutMain
+        <LayoutMain
           isMobile={isMobile}
           title={"Daniel_Trujillo.jpeg"}
           titleBarOptions={<TitleBar.Close onClick={handleClosePhotoModal} />}
           icon={<User variant="32x32_4" />}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleClosePhotoModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+          menu={photoMenu}
         >
-          <Frame
-            boxShadow="none"
-            style={{
-              margin: "auto",
-            }}
-          >
+          <Frame boxShadow="none" style={frameStyle}>
             <img
               src={pixel}
               aria-hidden
@@ -204,7 +204,7 @@ function Desktop() {
           <div className="image-text">
             <p>Daniel_Trujillo.jpeg</p>
           </div>
-        </S.layoutMain>
+        </LayoutMain>
       )}
       <TaskBar
         list={
@@ -256,21 +256,15 @@ function Desktop() {
           </List>
         }
       />
-      <React.Fragment>
-        <Shortcuts
-          openPortfolio={openPortfolio}
-          openCV={openCV}
-          openSkills={handleOpenSkillsModal}
-        />
-        {explorerOpened && (
-          <Portfolio
-            items={items}
-            closePortfolio={closePortfolio}
-            isMobile={isMobile}
-          />
-        )}
-        {cvOpened && <CV items={items} closeCV={closeCV} isMobile={isMobile} />}
-      </React.Fragment>
+      <Shortcuts
+        openPortfolio={openPortfolio}
+        openCV={openCV}
+        openSkills={handleOpenSkillsModal}
+      />
+      {explorerOpened && (
+        <Portfolio closePortfolio={closePortfolio} isMobile={isMobile} />
+      )}
+      {cvOpened && <CV closeCV={closeCV} isMobile={isMobile} />}
     </>
   );
 }
