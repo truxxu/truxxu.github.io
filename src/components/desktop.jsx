@@ -1,12 +1,7 @@
 import React, { useState, useCallback } from "react";
-import {
-  GlobalStyle,
-  ThemeProvider,
-  List,
-  Frame,
-  ProgressBar,
-  TaskBar,
-} from "@react95/core";
+import "@react95/core/GlobalStyle";
+import "@react95/core/themes/win95.css";
+import { List, Frame, ProgressBar, TaskBar, TitleBar } from "@react95/core";
 import pixel from "../pixel.png";
 import socialMedia from "./socialMedia";
 import Shortcuts from "./desktopIcons";
@@ -85,14 +80,13 @@ function Desktop() {
   const [cvOpened, toggleCV] = useState(false);
 
   return (
-    <ThemeProvider theme="win95">
-      <GlobalStyle></GlobalStyle>
+    <>
       {showAboutModal && (
         <S.layoutMain
           isMobile={isMobile}
           icon={<Progman37 variant="32x32_4" />}
           title={"About.txt"}
-          closeModal={handleCloseAboutModal}
+          titleBarOptions={<TitleBar.Close onClick={handleCloseAboutModal} />}
           menu={[
             {
               name: "Options",
@@ -138,7 +132,7 @@ function Desktop() {
         <S.layoutMain
           isMobile={isMobile}
           title={"Skills.txt"}
-          closeModal={handleCloseSkillsModal}
+          titleBarOptions={<TitleBar.Close onClick={handleCloseSkillsModal} />}
           icon={<Mspaint variant="32x32_4" />}
           menu={[
             {
@@ -187,7 +181,7 @@ function Desktop() {
         <S.layoutMain
           isMobile={isMobile}
           title={"Daniel_Trujillo.jpeg"}
-          closeModal={handleClosePhotoModal}
+          titleBarOptions={<TitleBar.Close onClick={handleClosePhotoModal} />}
           icon={<User variant="32x32_4" />}
           menu={[
             {
@@ -222,7 +216,7 @@ function Desktop() {
         <S.layoutMain
           isMobile={isMobile}
           title={"Doom.exe"}
-          closeModal={handleCloseDoomModal}
+          titleBarOptions={<TitleBar.Close onClick={handleCloseDoomModal} />}
           icon={
             <img className="pointer" src={caco} width={32} alt="Doom logo" />
           }
@@ -315,7 +309,7 @@ function Desktop() {
         )}
         {cvOpened && <CV items={items} closeCV={closeCV} isMobile={isMobile} />}
       </React.Fragment>
-    </ThemeProvider>
+    </>
   );
 }
 

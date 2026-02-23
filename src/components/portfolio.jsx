@@ -1,5 +1,5 @@
 import React from "react";
-import { List } from "@react95/core";
+import { List, TitleBar } from "@react95/core";
 import { Desk100 } from "@react95/icons";
 import * as S from "./layoutStyling";
 
@@ -8,7 +8,7 @@ function Portfolio({ closePortfolio, isMobile }) {
     <S.layoutMain
       isMobile={isMobile}
       title={"Projects"}
-      closeModal={closePortfolio}
+      titleBarOptions={<TitleBar.Close onClick={closePortfolio} />}
       height="100%"
       icon={<Desk100 variant="32x32_4" />}
       menu={[
